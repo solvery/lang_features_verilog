@@ -62,7 +62,6 @@ endclass : demo_tb
     uvm_config_object::set(this, "ad_m1*", "cfg", cfg.ad_cfg);
     ad_m1 = ad_env::type_id::create("ad_m1", this);
 
-    cfg = demo_m_config::type_id::create("cfg");
     uvm_config_object::set(this, "axi4lite_m0*", "cfg", cfg.axi4lite_cfg);
     uvm_config_object::set(this, "axi4lite_m0.slave[0]*", "cfg", cfg.axi4lite_cfg.slave_configs[0]);
 	axi4lite_m0 = axi4lite_env::type_id::create("axi4lite_m0", this);
