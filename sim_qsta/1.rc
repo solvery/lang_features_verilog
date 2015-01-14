@@ -1,0 +1,99 @@
+Magic 271485
+Revision 2011.10
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort -4 0 1372 878 310 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/prj/mainboard_k7/tb/vseq.axi_m.axis_m_x2/sim_qsta/tb.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 106340200.000000
+cursor 51000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 6
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/prj/mainboard_k7/tb/vseq.axi_m.axis_m_x2/sim_qsta/tb.fsdb"
+addSignal -h 15 /demo_top/ad_m_if_0/clock
+addSignal -h 15 -holdScope reset
+addGroup "G2"
+addSignal -h 15 -UNSIGNED -HEX /demo_top/ad_m_if_0/tdata[31:0]
+addSignal -h 15 -holdScope tready
+addSignal -h 15 -holdScope tvalid
+addGroup "G3"
+addSignal -h 15 -UNSIGNED -HEX /demo_top/ad_m_if_1/tdata[31:0]
+addSignal -h 15 -holdScope tready
+addSignal -h 15 -holdScope tvalid
+addGroup "G4"
+addSignal -h 15 -UNSIGNED -HEX /demo_top/axi4lite_m_if_0/axi_araddr[31:0]
+addSignal -h 15 -holdScope axi_arready
+addSignal -h 15 -holdScope axi_arvalid
+addSignal -h 15 -UNSIGNED -HEX -holdScope axi_awaddr[31:0]
+addSignal -h 15 -holdScope axi_awready
+addSignal -h 15 -holdScope axi_awvalid
+addSignal -h 15 -holdScope axi_bready
+addSignal -h 15 -UNSIGNED -HEX -holdScope axi_bresp[1:0]
+addSignal -h 15 -holdScope axi_bvalid
+addSignal -h 15 -UNSIGNED -HEX -holdScope axi_rdata[31:0]
+addSignal -h 15 -holdScope axi_rready
+addSignal -h 15 -UNSIGNED -HEX -holdScope axi_rresp[1:0]
+addSignal -h 15 -holdScope axi_rvalid
+addSignal -h 15 -UNSIGNED -HEX -holdScope axi_wdata[31:0]
+addSignal -h 15 -holdScope axi_wready
+addSignal -h 15 -UNSIGNED -HEX -holdScope axi_wstrb[3:0]
+addSignal -h 15 -holdScope axi_wvalid
+addGroup "G5"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/prj/mainboard_k7/tb/vseq.axi_m.axis_m_x2/sim_qsta/tb.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/ad_pkg"
+"/demo_top"
+
+SCOPE_LIST_BEGIN
+"/ad_pkg"
+"/demo_top/ad_m_if_0"
+"/demo_top/ad_m_if_1"
+"/demo_top/axi4lite_m_if_0"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+
