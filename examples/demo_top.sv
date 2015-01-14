@@ -1,12 +1,4 @@
-/*-----------------------------------------------------------------
-File name     : demo_top.sv
-Developers    : Kathleen Meade
-Created       : Tue May  4 15:13:46 2010
-Description   :
-Notes         :
--------------------------------------------------------------------
-Copyright 2010 (c) Cadence Design Systems
------------------------------------------------------------------*/
+
 `timescale 1 ns / 100 ps
 
 `include "ad_if.sv"
@@ -30,7 +22,7 @@ module demo_top;
   // Import the test library
 	`include "demo_tb.sv"
 	`include "demo_vseq_lib.sv"
-  `include "test_lib.sv"
+	`include "test_lib.sv"
 
   reg clock;
   reg reset;
