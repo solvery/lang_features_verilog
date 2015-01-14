@@ -1,0 +1,1 @@
+/workspace/bin/rename_file_dirs/.rename_content.sh
