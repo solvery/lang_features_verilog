@@ -1,0 +1,15 @@
+
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_pack_v1_00_a/hdl/verilog/pcard_pack.v
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_pack_v1_00_a/data/pcard_pack_v2_1_0.mpd
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_pack_v1_00_a/data/pcard_pack_v2_1_0.pao
+
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_link_aurora_v2_00_a/hdl/verilog/aurora_8b10b_v8_3_pcard/pcard_link_aurora.v
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_link_aurora_v2_00_a/data/pcard_link_aurora_v2_1_0.mpd
+
+
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_adc_ctrl_v1_00_a/hdl/verilog/pcard_adc_ctrl.v
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_adc_ctrl_v1_00_a/data/pcard_adc_ctrl_v2_1_0.mpd
+
+
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_front_ctrl_v2_00_a/hdl/verilog/pcard_front_ctrl.v
+/prj/sam/fpga/pcard_edk4ise/pcores/pcard_front_ctrl_v2_00_a/data/pcard_front_ctrl_v2_1_0.mpd
