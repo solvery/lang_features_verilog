@@ -1,13 +1,13 @@
 
-class blvds_front_ctrl_ad_fixed_data_cal_seq extends demo_base_vseq;
+class axi_m_axis_seq extends demo_base_vseq;
 
 
-  function new(string name="blvds_front_ctrl_ad_fixed_data_cal_seq");
+  function new(string name="axi_m_axis_seq");
       super.new(name);
   endfunction : new
 
   // Register sequence with a sequencer 
- `uvm_object_utils(blvds_front_ctrl_ad_fixed_data_cal_seq)
+ `uvm_object_utils(axi_m_axis_seq)
 
 	ad_multi_fixed_data_trans ad_tx_seq;
 	read_word_seq		read_reg_seq;
@@ -38,23 +38,23 @@ class blvds_front_ctrl_ad_fixed_data_cal_seq extends demo_base_vseq;
 
   endtask : body
 
-endclass : blvds_front_ctrl_ad_fixed_data_cal_seq
+endclass : axi_m_axis_seq
 
-class test_blvds_front_ctrl_ad_fixed_data_cal extends demo_base_test;
+class test_axi_m_axis extends demo_base_test;
 
-  `uvm_component_utils(test_blvds_front_ctrl_ad_fixed_data_cal)
+  `uvm_component_utils(test_axi_m_axis)
 
-  function new(string name = "test_blvds_front_ctrl_ad_fixed_data_cal", uvm_component parent);
+  function new(string name = "test_axi_m_axis", uvm_component parent);
     super.new(name,parent);
   endfunction : new
 
   virtual function void build_phase(uvm_phase phase);
     // Set the default sequence for the master and slaves
     uvm_config_db#(uvm_object_wrapper)::set(this, "demo_tb0.virtual_sequencer.run_phase","default_sequence", 
-		blvds_front_ctrl_ad_fixed_data_cal_seq::type_id::get());
+		axi_m_axis_seq::type_id::get());
     // Create the tb
     super.build_phase(phase);
   endfunction : build_phase
 
-endclass : test_blvds_front_ctrl_ad_fixed_data_cal
+endclass : test_axi_m_axis
 

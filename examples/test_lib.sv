@@ -94,10 +94,5 @@ class pcard_ad_tx_test extends demo_base_test;
 
 endclass : pcard_ad_tx_test
 
-`include "test_template_vseq.sv"
-`include "test_front_ctrl_laod_arg_vseq.sv"
-`include "test_load_arg_and_read_register.sv"
-`include "test_read_register.sv"
-`include "test_datapath_from_ad_to_aurora.sv"
-`include "test_blvds_front_ctrl_ad_cal.sv"
-`include "test_blvds_front_ctrl_ad_fixed_data_cal.sv"
+`include "test_axi_m_axis.sv"
+

@@ -1,7 +1,7 @@
 include /Makefile.qsta
 
 flist = run.f
-test = test_blvds_front_ctrl_ad_fixed_data_cal
+test = test_axi_m_axis
 top = demo_top dump_wave
 verbosity = UVM_HIGH
 vsim_args = -novopt -t ps +notimingchecks \
