@@ -4,8 +4,8 @@
 
 module dut_dummy( input clock, input reset, 
 	axi4lite_if m_if,
-	ad_if ad_m_if0,
-	ad_if ad_m_if1
+	ad_if axis_m_if0,
+	ad_if axis_m_if1
 	);
 
 wire resetn = reset;
@@ -19,8 +19,8 @@ assign  m_if.axi_rresp    = 2'b0;
 assign  m_if.axi_rvalid   = 1'b1;
 assign  m_if.axi_wready   = 1'b1;
 
-assign ad_m_if0.tready	= 1'b1;
-assign ad_m_if1.tready	= 1'b1;
+assign axis_m_if0.tready	= 1'b1;
+assign axis_m_if1.tready	= 1'b1;
 
 endmodule
 
