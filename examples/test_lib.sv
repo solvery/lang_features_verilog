@@ -96,3 +96,4 @@ endclass : pcard_ad_tx_test
 
 `include "test_axi_m_axis.sv"
 
+`include "test_axi_m_axis_dpi.sv"
