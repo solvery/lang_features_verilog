@@ -16,17 +16,26 @@ class axi_m_axis_seq extends demo_base_vseq;
 	bit [31:0] addr;
 	bit [31:0] data;
 
+	task reg32_r(bit [31:0] addr);
+    	`uvm_do_on_with(read_reg_seq, p_sequencer.axi4lite_seqr, { start_addr == addr; });
+	endtask
+
+	task reg32_w(bit [31:0] addr, bit [31:0] data);
+    	`uvm_do_on_with(write_reg_seq, p_sequencer.axi4lite_seqr, { start_addr == addr; write_data == data; });
+	endtask
+
   virtual task body();
     `uvm_info(get_type_name(), "Virtual Sequencer Executing", UVM_LOW)
 
 	#6000; // wait for reset done.
 
 	addr = 32'h00031000;
-    `uvm_do_on_with(read_reg_seq, p_sequencer.axi4lite_seqr, { start_addr == addr; });
+	reg32_r(addr);
 
 	addr = 32'h00031000;
 	data = 32'h11;
-    `uvm_do_on_with(write_reg_seq, p_sequencer.axi4lite_seqr, { start_addr == addr; write_data == data; });
+	reg32_w(addr, data);
+	reg32_w(32'h00031000, 32'h12);
 
 	fork
     `uvm_do_on_with(ad_tx_seq, p_sequencer.ad_tx_seqr0, {cnt == 20; start_data == -30; })
