@@ -1,5 +1,5 @@
 +incdir+../examples
-+incdir+../sv
++incdir+../../vseq.axi_m.axis_m_x2/sv
 +incdir+../../axi4lite/sv
 +incdir+../../ad_tx/sv
 +incdir+../../axi4stream/sv
