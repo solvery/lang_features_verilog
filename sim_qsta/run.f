@@ -5,4 +5,6 @@
 +incdir+../../axi4stream/sv
 ../examples/dut_dummy.v
 ../examples/demo_top.sv
+../examples/cimports.c
+
 

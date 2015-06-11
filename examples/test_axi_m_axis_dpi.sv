@@ -1,4 +1,48 @@
 
+import "DPI-C" context task CTask(
+    input int mcd, level, i1, i2,
+    output int o1, o2,
+    inout int io1);
+    
+import "DPI-C" context function int CFunction(
+    input int mcd, level, i1);
+
+export "DPI-C" task SVTask;
+export "DPI-C" function SVFunction;
+
+task SVTask(
+    input int level, i1, i2,
+    output int o1, o2,
+    inout int io1);
+begin
+	int i, mcd;
+    mcd = $fopen("results.txt") | 1;
+    for (i = 0; i < level; i = i + 1)
+        $fwrite(mcd, "   ");
+    $fdisplay(mcd, "In SVTask");
+    io1 = io1 + 2;
+    o1 = CFunction(mcd, level + 1, i1 + 2);
+    o2 = CFunction(mcd, level + 1, i2 * 2);
+end
+endtask
+
+//
+// Exported SV function.  Can be called by either C or SV.
+//
+function int SVFunction(
+    input int level, i1);
+begin
+	int i, mcd;
+    mcd = $fopen("results.txt") | 1;
+    for (i = 0; i < level; i = i + 1)
+        $fwrite(mcd, "   ");
+    $fdisplay(mcd, "In SVFunction");
+    SVFunction = i1 * 2;
+end
+endfunction
+
+
+
 class axi_m_axis_dpi_seq extends demo_base_vseq;
 
 
@@ -16,6 +60,8 @@ class axi_m_axis_dpi_seq extends demo_base_vseq;
 	bit [31:0] addr;
 	bit [31:0] data;
 
+	int i, mcd, vi1, vi2, vo3, vo4, vb5;
+
 	task reg32_r(bit [31:0] addr);
     	`uvm_do_on_with(read_reg_seq, p_sequencer.axi4lite_seqr, { start_addr == addr; });
 	endtask
@@ -27,7 +73,13 @@ class axi_m_axis_dpi_seq extends demo_base_vseq;
   virtual task body();
     `uvm_info(get_type_name(), "Virtual Sequencer Executing", UVM_LOW)
 
+
 	#6000; // wait for reset done.
+
+    vi1 = 'h2;
+    vi2 = 'h3;
+    vb5 = 'h4;
+    CTask(mcd, 1, vi1, vi2, vo3, vo4, vb5);
 
 	addr = 32'h00031000;
 	reg32_r(addr);
